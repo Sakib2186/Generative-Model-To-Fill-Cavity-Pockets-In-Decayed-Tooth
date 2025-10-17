@@ -17,6 +17,10 @@ The model learns to infer cavity shape, volume, and structure from the input cav
 
 ## Methodology
 
+<p align="center">
+  <img src="ASSETS/Methodology.png" alt="Methodology Overview" width="600"/>
+</p>
+
 ### 1. Data Preprocessing
 - The original dataset contained **15 lower jaw healthy teeth** in `.stl` format.
 - Meshes were inconsistent, broken, or non-watertight, requiring extensive cleanup in **Blender**.
