@@ -40,7 +40,9 @@ synthesized dataset is created using one cavity pockets per tooth.
   - Cylinder  
 - To make cavities more realistic, **fractal noise** was applied to deform base shapes.
 - Shapes were aligned to tooth surfaces using **Rodrigues’ rotation formula**, then embedded slightly below the surface.
+- To ensure, the holes don't reach the roots, only top 30% of the tooth was used.
 - The **filling mesh** was generated via Boolean intersection with the original tooth.
+
 
 ### 3. Training
 - Each tooth and filling was voxelized to a **128×128×128** binary grid.
@@ -79,5 +81,10 @@ Example inference result on unseen data:
 | Dice Score | 0.8347 |
 | IoU (Jaccard) | 0.7163 |
 | Mean Squared Error | 0.0542 |
+
+Due to computational difficulties, voxel grid of 128x128x128 and during re-meshing voxel size of 0.1m was chosen. A higher grid and a lower size
+would have resulted in better output and result, requiring more computational power. The synthesized dataset generated cavity-pockets arbitarily
+with differenct geometry, resulting in very few examples having sharp, long, narrow pockets which seemed unnatural. With more training examples
+the model can be re-trained to learn this outliers as well if needed.
 
 ---
