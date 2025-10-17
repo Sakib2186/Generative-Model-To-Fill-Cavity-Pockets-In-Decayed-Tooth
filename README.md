@@ -1,6 +1,8 @@
-# Tooth Cavity Reconstruction Using 3D U-Net
+# Tooth Cavity-Filling Reconstruction Using 3D U-Net
 
-The aim of this project is to predict the shape of the filling needed to fill the cavity pocket of decayed tooth.
+Tooth cavity is a growing convern among people of any age. Special attention is needed in the early stage to prevent root canal or tooth loss. Tradition method to preserve the tooth involves, is to 
+clean the decayed surface, and fill it up. However this filling is hand placed and does not help in preserving the original shape of the tooth prior to decaying. This project aims at producting the
+shape of the necessary filling/volume needed for a decayed tooth.
 
 ---
 
@@ -11,7 +13,8 @@ The workflow consists of two major phases:
 1. **Data Synthesis** – Due to limited true data, 3D cavity–filling pairs are generated from healthy tooth meshes using procedural geometry and fractal noise.
 2. **Training** – Training a 3D U-Net to predict fillings that fit the cavities using voxelized binary volumes.
 
-The model learns to infer cavity shape, volume, and structure from the input cavity mesh, producing realistic filling predictions.
+The model learns to infer cavity shape, volume, and structure from the input cavity mesh, producing realistic filling predictions. To keep things simple, initally the
+synthesized dataset is created using one cavity pockets per tooth.
 
 ---
 
@@ -35,10 +38,7 @@ The model learns to infer cavity shape, volume, and structure from the input cav
   - Sphere
   - Ellipsoid
   - Cylinder  
-- To make cavities more realistic, **fractal noise** was applied to deform base shapes:
-  \[
-  FractalNoise(p) = \sum_{i=0}^{octaves-1} amplitude_i \times BaseNoise(frequency_i \times p)
-  \]
+- To make cavities more realistic, **fractal noise** was applied to deform base shapes.
 - Shapes were aligned to tooth surfaces using **Rodrigues’ rotation formula**, then embedded slightly below the surface.
 - The **filling mesh** was generated via Boolean intersection with the original tooth.
 
