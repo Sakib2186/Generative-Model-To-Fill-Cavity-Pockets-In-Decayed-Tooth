@@ -1,0 +1,20 @@
+name: tooth-project
+channels:
+  - pytorch
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pytorch
+  - torchvision
+  - torchaudio
+  - cpuonly
+  - pytorch-cuda=11.8 # Example for CUDA 11.8. Adjust version as needed.
+  - numpy
+  - scipy
+  - scikit-learn
+  - scikit-image
+  - tqdm
+  - monai
+  - trimesh
+  - matplotlib
