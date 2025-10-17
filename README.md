@@ -85,3 +85,8 @@ with differenct geometry, resulting in very few examples having sharp, long, nar
 the model can be re-trained to learn this outliers as well if needed.
 
 ---
+
+## To  Run
+- create conda environment and install the libraries as mentioned in the environment.yaml file. Do change the cuda installtion library according to your need.
+- Using the HEALTH TOOTH DATASET PREPROCESSED files, you can generates as many cavity-filling pairs as you want.
+- You may train the model again using this data.
