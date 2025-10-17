@@ -54,10 +54,7 @@ synthesized dataset is created using one cavity pockets per tooth.
 - Loss Function:
   - Dice Loss  
   - Binary Cross-Entropy (BCE) Loss  
-  - Combined:  
-    \[
-    L_{total} = L_{Dice} + L_{BCE}
-    \]
+  - Combined:  L<sub>total</sub> = L<sub>Dice</sub> + L<sub>BCE</sub>
 - Optimizer: **Adam**
 - Techniques: **Early Stopping** and **Learning Rate Scheduler**
 - Training Phases:
